@@ -19,6 +19,7 @@ public class DragAndDropStepDef {
 
     @Then("verify that is dropped")
     public void verifyThatIsDropped() {
+
         WebElement droppedField = Driver.get().findElement(By.id("droppable"));
 
         String droppedText = droppedField.getText();
