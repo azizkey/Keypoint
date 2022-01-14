@@ -30,9 +30,10 @@ public class LoginStepDef {
         wait.until(ExpectedConditions.elementToBeClickable(page.loginButton));
         page.loginButton.click();
         Thread.sleep(2000);
-        String actual = page.productsTitle.getText();
-        String expected = "PRODUCTS";
+        String actual = driver.getCurrentUrl();
+        String expected = "https://www.saucedemo.com/inventory.html";
         Assert.assertEquals(actual, expected);
+        System.out.println("driver.getCurrentUrl() = " + driver.getCurrentUrl());
     }
 
     @When("user NOT types {string} or {string} on the login page or using wrong username")
@@ -42,9 +43,10 @@ public class LoginStepDef {
         wait.until(ExpectedConditions.elementToBeClickable(page.loginButton));
         page.loginButton.click();
         Thread.sleep(2000);
-        String actual = page.errorMessage.getText();
+        String actual = driver.getCurrentUrl();
         String expected = "Epic sadface";
         Assert.assertTrue(actual.contains(expected));
+        System.out.println("driver.getCurrentUrl() = " + driver.getCurrentUrl());
 
 
     }
