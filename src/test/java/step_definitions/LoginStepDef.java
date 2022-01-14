@@ -33,7 +33,6 @@ public class LoginStepDef {
         String actual = page.productsTitle.getText();
         String expected = "PRODUCTS";
         Assert.assertEquals(actual, expected);
-        driver.navigate().back();
     }
 
     @When("user NOT types {string} or {string} on the login page or using wrong username")
