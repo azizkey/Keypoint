@@ -14,5 +14,13 @@ public class HoverOverPage extends BasePage{
     @FindBy(css = "#toolTipButton")
     public WebElement hoverMeToSeeButton;
 
+    @FindBy(id = "toolTipTextField")
+    public WebElement toolTipTexField;
+
+    @FindBy(xpath = "//div[contains(text(), 'You hovered over the text field')]")
+    public WebElement popUp;
+
+
+
 
 }

@@ -7,12 +7,13 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
 import pages.HoverOverPage;
-import utilities.BrowserUtilities;
+import utilities.BrowserUtils;
 import utilities.Driver;
 
 
 public class HoverOverStepDef extends HoverOverPage {
     HoverOverPage page = new HoverOverPage();
+
     @And("user clicks Widgets on the page")
     public void userClicksWidgetsOnThePage() {
         page.widgetButton.click();
@@ -21,7 +22,7 @@ public class HoverOverStepDef extends HoverOverPage {
     @And("user clicks Tool tips under the Widgets menu")
     public void userClicksToolTipsUnderTheWidgetsMenu() {
         Driver.get().findElement(By.cssSelector("#close-fixedban")).click();
-        BrowserUtilities.scrollToElement(page.toolTipsButton);
+        BrowserUtils.scrollToElement(page.toolTipsButton);
         page.toolTipsButton.click();
     }
 
@@ -34,11 +35,15 @@ public class HoverOverStepDef extends HoverOverPage {
         String expectedText = "Hover me to see";
         System.out.println("expectedText = " + expectedText);
         Assert.assertEquals(actualText, expectedText);
-
     }
 
     @Then("user should see You hovered over the Button text and verify the text")
-    public void userShouldSeeYouHoveredOverTheButtonTextAndVerifyTheText() {
+    public void userShouldSeeYouHoveredOverTheButtonTextAndVerifyTheText() throws InterruptedException {
+        Actions action = new Actions(Driver.get());
+        action.moveToElement(page.toolTipTexField).perform();
+        Thread.sleep(3000);
+        System.out.println(page.popUp.getText());
     }
-
 }
+
+

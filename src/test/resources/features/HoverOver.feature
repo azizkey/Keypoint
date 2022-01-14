@@ -8,4 +8,4 @@ Feature: hover over the “Hover me to see” button and verify the “You Hover
       And user clicks Widgets on the page
       And user clicks Tool tips under the Widgets menu
       When the user hover over to Hover me to see
-      #Then user should see You hovered over the Button text and verify the text
+      Then user should see You hovered over the Button text and verify the text
