@@ -20,13 +20,13 @@ public class AlertHandleStepDef {
         System.out.println(Driver.get().getCurrentUrl());
     }
 
-    @And("Click Click Me Button to see alert button")
-    public void ClickClickMeButtonToSeeAlertButton() {
+    @And("click Click Me Button to see alert button")
+    public void clickClickMeButtonToSeeAlertButton() {
         page.clickMe.click();
     }
 
-    @Then("Click alert ok button to hadle alert")
-    public void ClickAlertOkButtonToHadleAlert() {
+    @Then("click alert ok button to hadle alert")
+    public void clickAlertOkButtonToHadleAlert() {
         WebDriverWait wait = new WebDriverWait(Driver.get(), 15);
         wait.until(ExpectedConditions.alertIsPresent());
         Driver.get().switchTo().alert().accept();
@@ -37,8 +37,8 @@ public class AlertHandleStepDef {
         page.secondAlert5.click();
     }
 
-    @And("user clicks thirth alert box")
-    public void userClicksThirthAlertBox() {
+    @And("user clicks third alert box")
+    public void userClicksThirdAlertBox() {
         page.thirthAlert.click();
         System.out.println("click 3.");
     }
