@@ -15,6 +15,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Driver {
     private static WebDriver driver;
+
     public static WebDriver get() {
         if (driver == null) {
             String browser = ConfigurationReader.get("browser");
@@ -61,7 +62,7 @@ public class Driver {
         }
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-      //  driver.manage().window().maximize();
+        driver.manage().window().maximize();
 
         return driver;
     }
@@ -70,11 +71,7 @@ public class Driver {
         if (driver != null) {
             driver.quit();
             driver = null;
-
-
         }
     }
-
-
 }
 
